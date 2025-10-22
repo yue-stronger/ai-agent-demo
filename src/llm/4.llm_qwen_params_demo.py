@@ -50,7 +50,7 @@ if __name__ == "__main__":
     reply = chat_with_qianwen(
         prompt="以‘秋天的雨’为主题写一句诗",
         system_prompt=system_prompt,
-        temperature=0.9,  # 高随机性
+        temperature=1.8,  # 高随机性
         top_k=100,
         top_p=0.9
     )
