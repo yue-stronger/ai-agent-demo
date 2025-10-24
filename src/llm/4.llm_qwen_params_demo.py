@@ -4,7 +4,7 @@ API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
 
-def chat_with_qianwen(prompt, system_prompt=None, temperature=0.8, top_k=50, top_p=0.8):
+def chat_with_qwen(prompt, system_prompt=None, temperature=0.8, top_k=50, top_p=0.8):
     """
     调用通义千问API，支持设置temperature、top-k、top-p参数
     :param temperature: 随机性（0~1）
@@ -45,9 +45,9 @@ def chat_with_qianwen(prompt, system_prompt=None, temperature=0.8, top_k=50, top
 if __name__ == "__main__":
     # 示例：设置不同参数（根据需求调整）
     system_prompt = "你是一个创意写作助手，生成内容要多样有趣。"
-    # 高随机性（适合创意生成）：temperature=0.9, top_k=100, top_p=0.9
+    # 高随机性（适合创意生成）：temperature=1.8, top_k=100, top_p=0.9
     # 高确定性（适合事实回答）：temperature=0.1, top_k=10, top_p=0.5
-    reply = chat_with_qianwen(
+    reply = chat_with_qwen(
         prompt="以‘秋天的雨’为主题写一句诗",
         system_prompt=system_prompt,
         temperature=1.8,  # 高随机性

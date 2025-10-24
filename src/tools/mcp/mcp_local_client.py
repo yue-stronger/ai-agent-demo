@@ -9,7 +9,7 @@ from dashscope import Generation
 dashscope.api_key = "sk-66f2d6d0bbf346909ebd9d1eced5244a"  # 替换为实际密钥
 
 # MCP服务地址（与本地MCP服务对应）
-MCP_SERVICE_URL = "http://localhost:8000/mcp/call"
+MCP_SERVICE_URL = "http://localhost:18000/mcp/call"
 
 
 def llm_decide_tool(user_query: str) -> tuple[None, None, str] | tuple[Any, Any, None]:

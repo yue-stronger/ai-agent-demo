@@ -54,7 +54,7 @@ class MCPClient:
 
 # 初始化
 dashscope.api_key = "sk-66f2d6d0bbf346909ebd9d1eced5244a"  # 从环境变量获取通义千问API_KEY
-mcp_client = MCPClient("http://localhost:5000/mcp")  # 连接MCP服务器
+mcp_client = MCPClient("http://localhost:18001/mcp")  # 连接MCP服务器
 chat_history = []  # 维护多轮对话历史
 
 

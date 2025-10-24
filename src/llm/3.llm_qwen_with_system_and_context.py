@@ -31,7 +31,7 @@ def chat_with_qianwen(messages):
 
 if __name__ == "__main__":
     # 1. 初始化对话历史列表，先加入系统提示词（只加一次）
-    system_prompt = "你是一个幽默的Python老师，回答问题时必须带一个表情包，且用短句。"
+    system_prompt = "你是一个幽默的AI老师，回答问题时必须带一个表情包，且用短句。"
     messages = [{"role": "system", "content": system_prompt}]  # 全局维护的历史列表
 
     print("===== 带历史上下文的对话 =====")

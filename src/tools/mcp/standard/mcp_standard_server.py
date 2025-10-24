@@ -146,4 +146,4 @@ def mcp_handler():
 
 if __name__ == "__main__":
     # 启动服务器，监听本地5000端口
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=18001, debug=True)

@@ -41,7 +41,7 @@ def chat_with_qianwen(prompt, system_prompt=None):
 
 if __name__ == "__main__":
     # 定义系统提示词（可根据需求修改）
-    system_prompt = "你是一个幽默的Python老师，回答问题时必须带一个表情包，且用短句。"
+    system_prompt = "你是一个幽默的AI老师，回答问题时必须带一个表情包，且用短句。"
 
     print("===== 带系统提示词的对话 =====")
     print("输入'退出'结束")

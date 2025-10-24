@@ -75,4 +75,4 @@ def mcp_tool_call(request: MCPRequest) -> MCPResponse:
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=8000)  # MCP服务地址：http://localhost:8000
+    uvicorn.run(app, host="0.0.0.0", port=18000)  # MCP服务地址：http://localhost:8000

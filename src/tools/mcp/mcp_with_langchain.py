@@ -28,7 +28,7 @@ DASHSCOPE_API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"  # 通义千问密钥
 
 @tool
 def get_stock_price(symbol: str) -> str:
-    """查询股票实时价格（参数：股票代码，如AAPL、GOOGL）"""
+    """查询股票实时价格（参数：股票代码，如APPLE、GOOGL）"""
     try:
         # 增加延迟，避免触发限流
         time.sleep(1)  # 每次请求间隔1秒

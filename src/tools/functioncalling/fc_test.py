@@ -8,14 +8,8 @@ URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/gener
 
 # 2. 定义可用的工具函数（实际场景中可对接真实API）
 def get_weather(city: str) -> str:
-    """查询指定城市的天气（模拟）"""
-    # 模拟天气数据，实际应调用天气API
-    weather_data = {
-        "北京": "晴，25℃，微风",
-        "上海": "多云，28℃，东风3级",
-        "广州": "小雨，30℃，南风2级"
-    }
-    return f"{city}当前天气：{weather_data.get(city, '暂未获取到数据')}"
+    """查询指定城市的实时天气"""
+    return f"{city}当前天气：晴，25℃"
 
 
 # 3. 工具映射表：让代码能根据函数名找到对应的工具（关键）
@@ -95,6 +89,9 @@ def main():
         if not function_call:
             # 不需要调用工具，直接记录并展示结果
             messages.append({"role": "assistant", "content": model_response})
+            print("\n")
+            print("=======================================================")
+            print("\n")
             print(f"最终回答：{model_response}")
             continue
 

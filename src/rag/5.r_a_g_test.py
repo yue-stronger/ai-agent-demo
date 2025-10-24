@@ -1,6 +1,8 @@
 import dashscope  # 通义千问SDK
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
+import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # 1. 加载环境变量（存储API密钥，避免硬编码）
 dashscope.api_key = "sk-66f2d6d0bbf346909ebd9d1eced5244a"  # 从.env文件获取通义千问API密钥
@@ -91,12 +93,12 @@ def rag_qa_system():
     )
 
     print("===== 产品X RAG问答系统 =====")
-    print("提示：输入问题查询产品信息（如“游泳时能戴产品X吗？”），输入'exit'退出程序\n")
+    print("提示：输入问题查询产品信息（如“游泳时能戴产品X吗？”），输入'退出'程序\n")
 
     while True:
         # 2. 接收用户问题
         user_query = input("请输入你的问题：")
-        if user_query.lower() == "exit":
+        if user_query.lower() == "退出":
             print("程序已退出，再见！")
             break
         if not user_query.strip():
