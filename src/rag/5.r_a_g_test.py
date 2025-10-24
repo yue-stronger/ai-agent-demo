@@ -56,7 +56,7 @@ def call_qwen_model(prompt: str) -> str:
         response = dashscope.Generation.call(
             model=dashscope.Generation.Models.qwen_turbo,
             prompt=prompt,
-            temperature=0.1,
+            temperature=1.8,
             top_p=0.9,
             max_tokens=1024
         )

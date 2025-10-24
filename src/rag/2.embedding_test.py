@@ -1,7 +1,8 @@
 from langchain_classic.text_splitter import RecursiveCharacterTextSplitter
+from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# 1. 准备示例文本（分块用）
+# 1. 准备示例文本
 text = """  
         产品X是2024年推出的智能手表，支持以下功能：  
         1. 健康监测：心率、血氧、睡眠质量检测，数据每5分钟更新一次。  
@@ -44,7 +45,7 @@ if __name__ == "__main__":
 
     # 方案2：通义千问嵌入API（需阿里云密钥，768维向量）
     # import os
-    # os.environ["DASHSCOPE_API_KEY"] = "你的通义千问密钥"
+    # os.environ["DASHSCOPE_API_KEY"] = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
     # embedding_model = DashScopeEmbeddings(model="text-embedding-v1")
 
     # 4. 对分块后的文本进行向量化
