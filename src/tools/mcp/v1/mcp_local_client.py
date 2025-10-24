@@ -5,8 +5,8 @@ import json
 import dashscope  # 通义千问SDK
 from dashscope import Generation
 
-# 配置通义千问API密钥（从环境变量读取或直接填写）
-dashscope.api_key = "sk-66f2d6d0bbf346909ebd9d1eced5244a"  # 替换为实际密钥
+# 配置通义千问API密钥
+dashscope.api_key = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
 
 # MCP服务地址（与本地MCP服务对应）
 MCP_SERVICE_URL = "http://localhost:18000/mcp/call"

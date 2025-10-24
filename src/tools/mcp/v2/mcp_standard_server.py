@@ -43,13 +43,7 @@ registered_tools = [weather_tool, sum_tool]
 def execute_get_weather(params):
     """执行天气查询工具"""
     city = params["city"]
-    # 模拟天气数据（实际场景调用真实API）
-    mock_weather = {
-        "北京": "晴，22°C",
-        "上海": "多云，25°C",
-        "广州": "小雨，28°C"
-    }.get(city, f"{city}的天气数据暂未收录")
-    return {"type": "text", "text": mock_weather}
+    return {"type": "text", "text": f"{city}当前天气：晴，25℃"}
 
 def execute_calculate_sum(params):
     """执行加法计算工具"""

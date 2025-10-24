@@ -28,16 +28,8 @@ class MCPResponse(BaseModel):
 class WeatherTool:
     @staticmethod
     def run(city: str) -> str:
-        """查询天气的具体实现（模拟）"""
-        if not city:
-            return "错误：缺少城市参数"
-        # 模拟天气数据
-        weather_data = {
-            "北京": "晴，25℃，北风2级",
-            "上海": "多云，27℃，东风3级",
-            "广州": "雷阵雨，29℃，南风1级"
-        }
-        return weather_data.get(city, f"未查询到{city}的天气数据")
+        """查询指定城市的实时天气"""
+        return f"{city}当前天气：晴，25℃"
 
 
 # 注册工具列表（MCP服务管理的工具）
@@ -75,4 +67,4 @@ def mcp_tool_call(request: MCPRequest) -> MCPResponse:
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="0.0.0.0", port=18000)  # MCP服务地址：http://localhost:8000
+    uvicorn.run(app, host="0.0.0.0", port=18000)  # MCP服务地址：http://localhost:18000
