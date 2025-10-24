@@ -4,9 +4,11 @@ API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
 
-def chat_with_qwen(prompt, system_prompt=None, temperature=0.8, top_k=50, top_p=0.8):
+def chat_with_qwen(user_prompt, system_prompt, temperature, top_k, top_p):
     """
     调用通义千问API，支持设置temperature、top-k、top-p参数
+    :param user_prompt: 用户提示词
+    :param system_prompt: 系统提示词
     :param temperature: 随机性（0~1）
     :param top_k: 候选词数量（1~100）
     :param top_p: 累积概率（0~1）
@@ -16,10 +18,7 @@ def chat_with_qwen(prompt, system_prompt=None, temperature=0.8, top_k=50, top_p=
         "Authorization": f"Bearer {API_KEY}"
     }
 
-    messages = []
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
-    messages.append({"role": "user", "content": prompt})
+    messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}]
 
     data = {
         "model": "qwen-plus",
@@ -48,7 +47,7 @@ if __name__ == "__main__":
     # 高随机性（适合创意生成）：temperature=1.8, top_k=100, top_p=0.9
     # 高确定性（适合事实回答）：temperature=0.1, top_k=10, top_p=0.5
     reply = chat_with_qwen(
-        prompt="以‘秋天的雨’为主题写一句诗",
+        user_prompt="以'秋天'为主题写一句诗",
         system_prompt=system_prompt,
         temperature=1.8,  # 高随机性
         top_k=100,

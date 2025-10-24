@@ -4,7 +4,7 @@ API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
 
-def chat_with_qianwen(prompt, system_prompt=None):
+def chat_with_qwen(user_prompt, system_prompt):
     """
     调用通义千问API，支持系统提示词和用户提示词
     :param prompt: 用户输入的问题（用户提示词）
@@ -17,12 +17,9 @@ def chat_with_qianwen(prompt, system_prompt=None):
     }
 
     # 构建消息列表（先加系统提示词，再加用户提示词）
-    messages = []
-    # 如果有系统提示词，添加到messages（role="system"）
-    if system_prompt:
-        messages.append({"role": "system", "content": system_prompt})
+    # 添加系统提示词（role="system"）
     # 添加用户提示词（role="user"）
-    messages.append({"role": "user", "content": prompt})
+    messages = [{"role": "system", "content": system_prompt}, {"role": "user", "content": user_prompt}]
 
     data = {
         "model": "qwen-plus",
@@ -52,5 +49,5 @@ if __name__ == "__main__":
             print("再见！")
             break
         # 调用时传入用户提示和系统提示
-        reply = chat_with_qianwen(user_input, system_prompt)
+        reply = chat_with_qwen(user_input, system_prompt)
         print(f"通义千问：{reply}")

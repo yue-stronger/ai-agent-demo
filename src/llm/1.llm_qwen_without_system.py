@@ -4,7 +4,7 @@ API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
 
-def chat_with_qianwen(prompt):
+def chat_with_qwen(prompt):
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer {API_KEY}"
@@ -36,5 +36,5 @@ if __name__ == "__main__":
             print("再见！")
             break
 
-        reply = chat_with_qianwen(user_input)
+        reply = chat_with_qwen(user_input)
         print(f"通义千问：{reply}")

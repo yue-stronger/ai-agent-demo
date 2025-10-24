@@ -3,7 +3,7 @@ import requests
 API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
-def chat_with_qianwen(messages):
+def chat_with_qwen(messages):
     """
     调用通义千问API，接收包含历史上下文的messages列表
     :param messages: 完整的对话历史列表（含system、user、assistant角色）
@@ -46,7 +46,7 @@ if __name__ == "__main__":
         messages.append({"role": "user", "content": user_input})  # 追加用户消息
 
         # 3. 调用模型，传入完整历史
-        reply = chat_with_qianwen(messages)
+        reply = chat_with_qwen(messages)
         print(f"通义千问：{reply}")
 
         # 4. 将模型回复添加到历史列表（assistant角色），供下一轮对话使用
