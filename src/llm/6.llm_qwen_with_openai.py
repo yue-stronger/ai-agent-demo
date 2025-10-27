@@ -15,10 +15,12 @@ if __name__ == "__main__":
         model="qwen-plus",  # 通义千问模型名（如 qwen-plus、qwen-turbo）
         messages=[
             {"role": "system", "content": "你是一个助手，用简洁的语言回答问题。"},
-            {"role": "user", "content": "介绍一下通义千问"}
+            {"role": "user", "content": "做一个自我介绍"}
         ],
         temperature=0.7  # 支持设置 temperature 等参数
     )
 
     # 3. 提取回复
-    print("通义千问回复：", response.choices[0].message.content)
+    print("大模型回复：")
+    print(response.choices[0].message.content)
+

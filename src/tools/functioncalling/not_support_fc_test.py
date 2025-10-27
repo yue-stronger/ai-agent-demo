@@ -1,5 +1,4 @@
-import os  
-import requests  
+import requests
 import json  
 
 def test_deepseek_api_no_function_calling():  

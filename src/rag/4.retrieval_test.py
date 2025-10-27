@@ -20,14 +20,14 @@ def retrieval():
     )
 
     print("===== 产品手册知识检索工具 =====")
-    print("提示：输入问题查询产品信息，输入'exit'退出程序\n")
+    print("提示：输入问题查询产品信息，输入'退出'退出程序\n")
 
     while True:
         # 3. 接收用户控制台输入
         user_query = input("请输入你的问题：")
 
         # 退出条件
-        if user_query.lower() == "exit":
+        if user_query.lower() == "退出":
             print("程序已退出，再见！")
             break
 

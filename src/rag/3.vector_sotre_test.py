@@ -1,4 +1,3 @@
-# 1. 修正导入（关键！）
 import uuid
 
 from langchain_chroma import Chroma
@@ -6,7 +5,7 @@ from langchain_core.documents import Document  # 导入Document类（用于包�
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# 2. 示例文本（不变）
+# 2. 示例文本
 text = """  
 产品X是2024年推出的智能手表，支持以下功能：  
 1. 健康监测：心率、血氧、睡眠质量检测，数据每5分钟更新一次。  
@@ -26,7 +25,7 @@ A：确保手表佩戴紧密，且睡眠时间超过4小时才会生成完整报
 """
 
 if __name__ == "__main__":
-    # 3. 文本分块（不变，但后续需转换为Document）
+    # 3. 文本分块
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=80,
         chunk_overlap=20,
@@ -34,7 +33,7 @@ if __name__ == "__main__":
     )
     chunks = text_splitter.split_text(text)  # chunks是字符串列表
 
-    # 4. 初始化嵌入模型（不变）
+    # 4. 初始化嵌入模型
     local_model_path = "../../local_models/bge-small-zh-v1"  # 你的本地模型路径
     embedding_model = HuggingFaceEmbeddings(
         model_name=local_model_path,
@@ -42,7 +41,7 @@ if __name__ == "__main__":
         encode_kwargs={'normalize_embeddings': True}
     )
 
-    # 5. 初始化ChromaDB（用新导入的Chroma）
+    # 5. 初始化ChromaDB
     persist_directory = "../../store/chroma_db"
     db = Chroma(
         collection_name="product_docs",
@@ -67,7 +66,6 @@ if __name__ == "__main__":
     db.add_documents(
         documents=documents,  # 传入Document对象列表（而非字符串列表）
         ids=chunk_ids  # 唯一ID
-        # 无需手动传embeddings和metadatas：embedding由embedding_function自动生成，metadatas已包含在Document中
     )
 
     # 持久化

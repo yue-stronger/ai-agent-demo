@@ -5,7 +5,7 @@ API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
 
-def call_qianwen(prompt, temp=0.8, topk=50, topp=0.8):
+def call_qwen(prompt, temp, top_k, top_p):
     """封装调用函数，接收参数并返回结果"""
     headers = {
         "Content-Type": "application/json",
@@ -17,8 +17,8 @@ def call_qianwen(prompt, temp=0.8, topk=50, topp=0.8):
         "parameters": {
             "result_format": "text",
             "temperature": temp,
-            "top_k": topk,
-            "top_p": topp
+            "top_k": top_k,
+            "top_p": top_p
         }
     }
     try:
@@ -37,9 +37,9 @@ if __name__ == "__main__":
     # 高随机性参数 多次结果差异很大（句子结构、用词可能完全不同），甚至会出现更有创意的表达。
     # 高确定性参数 多次结果非常相似（几乎是同一类句子，用词重复率高），稳定性强但缺乏多样性。
     param_groups = {
-        "默认参数": {"temp": 0.8, "topk": 50, "topp": 0.7},
-        "高随机性（创意）": {"temp": 1, "topk": 100, "topp": 0.95},
-        "高确定性（稳定）": {"temp": 0.1, "topk": 10, "topp": 0.5}
+        "默认参数": {"temp": 0.8, "top_k": 50, "top_p": 0.7},
+        "高随机性（创意）": {"temp": 1.8, "top_k": 100, "top_p": 0.95},
+        "高确定性（稳定）": {"temp": 0.1, "top_k": 10, "top_p": 0.5}
     }
 
 
@@ -48,11 +48,11 @@ if __name__ == "__main__":
         print(f"\n===== {name} 测试结果 =====")
         for i in range(3):
             print(f"\n第{i + 1}次：")
-            result = call_qianwen(
+            result = call_qwen(
                 test_prompt,
                 temp=params["temp"],
-                topk=params["topk"],
-                topp=params["topp"]
+                top_k=params["top_k"],
+                top_p=params["top_p"]
             )
             print(result)
             time.sleep(1)  # 避免请求过于频繁
