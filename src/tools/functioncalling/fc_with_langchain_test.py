@@ -12,7 +12,7 @@ def get_weather(city: str) -> str:
 
 
 # 2. 拉起通义千问-plus模型，绑定可用函数
-llm = ChatTongyi(model_name="qwen-plus", dashscope_api_key="sk-66f2d6d0bbf346909ebd9d1eced5244a")
+llm = ChatTongyi(model_name="qwen-plus", dashscope_api_key="sk-xxxxxxxxxxxxxxxxxxxxxxxxxx")
 tools = [get_weather]
 
 # 3. 使用 ReAct Prompt（通义千问-plus 支持 ReAct 框架）

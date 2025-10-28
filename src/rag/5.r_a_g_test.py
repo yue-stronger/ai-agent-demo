@@ -5,7 +5,7 @@ import os
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 # 1. 加载环境变量（存储API密钥，避免硬编码）
-dashscope.api_key = "sk-66f2d6d0bbf346909ebd9d1eced5244a"  # 从.env文件获取通义千问API密钥
+dashscope.api_key = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxx"  # 从.env文件获取通义千问API密钥
 
 
 def build_rag_prompt(user_query: str, retrieved_docs: list) -> str:

@@ -10,7 +10,7 @@ from yfinance.exceptions import YFRateLimitError
 
 # 加载API密钥（即使没用到.env，也不影响）
 load_dotenv()
-DASHSCOPE_API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"  # 通义千问密钥
+DASHSCOPE_API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxx"  # 通义千问密钥
 
 
 # --------------------------

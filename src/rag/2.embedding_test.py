@@ -45,7 +45,7 @@ if __name__ == "__main__":
 
     # 方案2：通义千问嵌入API（需阿里云密钥，768维向量）
     # import os
-    # os.environ["DASHSCOPE_API_KEY"] = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
+    # os.environ["DASHSCOPE_API_KEY"] = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxx"
     # embedding_model = DashScopeEmbeddings(model="text-embedding-v1")
 
     # 4. 对分块后的文本进行向量化

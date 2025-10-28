@@ -2,7 +2,7 @@ import requests
 import json
 
 # 1. 配置通义千问API
-API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
+API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxx"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
 

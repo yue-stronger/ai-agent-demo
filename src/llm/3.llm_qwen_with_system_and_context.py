@@ -1,6 +1,6 @@
 import requests
 
-API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
+API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxx"
 URL = "https://dashscope.aliyuncs.com/api/v1/services/aigc/text-generation/generation"
 
 def chat_with_qwen(messages):

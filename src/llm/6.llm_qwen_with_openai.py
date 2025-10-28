@@ -1,6 +1,6 @@
 from openai import OpenAI
 
-API_KEY = "sk-66f2d6d0bbf346909ebd9d1eced5244a"
+API_KEY = "sk-xxxxxxxxxxxxxxxxxxxxxxxxxx"
 URL = "https://dashscope.aliyuncs.com/compatible-mode/v1"
 
 if __name__ == "__main__":
